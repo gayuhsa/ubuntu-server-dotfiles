@@ -1,0 +1,24 @@
+$TTL    86400
+@       IN      SOA     ns1.lab.local. admin.lab.local. (
+                        2024090201      ; Serial
+                        3600            ; Refresh
+                        1800            ; Retry
+                        604800          ; Expire
+                        86400 )         ; Negative Cache TTL
+
+; Name server
+@       IN      NS      ns1.lab.local.
+
+; PTR Records (IP to hostname mapping)
+; Note: Only use the last octet of IP address
+10      IN      PTR     ns1.lab.local.
+20      IN      PTR     www.lab.local.
+21      IN      PTR     mail.lab.local.
+22      IN      PTR     ftp.lab.local.
+23      IN      PTR     db.lab.local.
+
+; Additional PTR records for other servers
+1       IN      PTR     gateway.lab.local.
+100     IN      PTR     pc01.lab.local.
+101     IN      PTR     pc02.lab.local.
+102     IN      PTR     laptop01.lab.local.

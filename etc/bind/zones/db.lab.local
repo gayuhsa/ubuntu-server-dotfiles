@@ -1,0 +1,30 @@
+$TTL    86400
+@       IN      SOA     ns1.lab.local. admin.lab.local. (
+                        2024090201      ; Serial (YYYYMMDDNN)
+                        3600            ; Refresh
+                        1800            ; Retry  
+                        604800          ; Expire
+                        86400 )         ; Negative Cache TTL
+
+; Name servers
+@       IN      NS      ns1.lab.local.
+
+; A Records (Host to IP mapping)
+ns1     IN      A       192.168.56.1
+www     IN      A       192.168.56.20
+mail    IN      A       192.168.56.21
+ftp     IN      A       192.168.56.22
+db      IN      A       192.168.56.23
+blog    IN      A       192.168.56.20
+api     IN      A       192.168.56.20
+
+; CNAME Records (Aliases)
+server  IN      CNAME   ns1
+web     IN      CNAME   www
+webmail IN      CNAME   mail
+
+; MX Record (Mail server)
+@       IN      MX      10      mail.lab.local.
+
+; TXT Records (Additional info)
+@       IN      TXT     "Lab Domain for Network Administration Course"
